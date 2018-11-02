@@ -1,25 +1,30 @@
-<h1>The let's get destroy cocktail</h1>
 
 
+
+ <%= render 'layouts/navbar.html.erb'%>
+<%= render 'layouts/banner.html.erb'%>
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Name</div>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), src("images/curacao.jpg");">
+          <div class="card-category"><%= link_to "Details", cocktail_path(cocktail), class: 'btn details'%></div>
             <div class="card-description">
-                <h4><%= cocktail.name%>
+                <h4><%= cocktail.name%></h4>
+              <%=link_to 'Delete', cocktail_path(cocktail), class: 'btn btn-danger card-delete',
+                       method: :delete,
+                       data: { confirm: "Are you sure?" }%>
 
-                </h4>
               </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <img class="card-user" src="">
           <a class="card-link" href="#" ></a>
         </div>
-        <%= link_to "Remove cocktail", cocktail_path(cocktail), method: :delete%>
-        <%= link_to "More details", cocktail_path(cocktail)%>
+
       </div>
 
     <%end%>
   </div>
 </div>
+<%= render 'layouts/historic.html.erb'%>
 
+<!-- url('https://kitt.lewagon.com/placeholder/cities/shanghai') -->

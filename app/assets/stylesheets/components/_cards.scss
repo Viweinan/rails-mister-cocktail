@@ -5,6 +5,8 @@
   background-position: center;
   color: white;
   position: relative;
+  margin-top: 30px;
+
 }
 .card-user {
   position: absolute;
@@ -50,5 +52,18 @@ h4 {
   color: white;
 }
 .card-description h4 {
+  color: white;
+}
+.card-delete{
+  position: absolute;
+  right: -136px;
+  bottom: 10px;
+  z-index: 3;
+}
+.details {
+  position: absolute;
+  z-index: 5;
+  bottom: -38px;
+  right: -80px;
   color: white;
 }
